@@ -26,9 +26,8 @@ export default function Home() {
       </div>
 
       {/* 초대 문구 섹션 */}
-      <section className="flex flex-col justify-between bg-amber-50 px-5 py-24">
-        <h2>초대합니다</h2>
-        <p>
+      <Section title='초대합니다' bgColored={true}>
+        <p className='text-center'>
           7년 전 연인으로 만난 저희가
           <br />
           가족이 되고자 결혼합니다.
@@ -37,10 +36,10 @@ export default function Home() {
           <br />
           귀한 걸음 하시어 축하해주세요.
         </p>
-      </section>
+      </Section>
 
       {/* 전화번호 섹션 */}
-      <section className="flex flex-col justify-between bg-white px-5 py-24">
+      <Section>
         <p>
           이철수, 인순애의 차남 <span>이주찬</span>
           <CallLink phoneNumber='010-4364-3208' />
@@ -67,36 +66,36 @@ export default function Home() {
           <span>모</span> 차미경
           <CallLink phoneNumber='010-4596-3885' />
         </p>
-      </section>
+      </Section>
 
       {/* 사진첩 섹션 */}
-      <section className="flex flex-col justify-between bg-amber-50 px-5 py-24">
-        <h2>사진첩</h2>
+      <Section title="사진첩" bgColored={true}>
         <div>
           {/* 캐로셀 사진첩 구현 */}
         </div>
-      </section>
+      </Section>
 
       {/* 날짜 섹션 */}
-      <section className="flex flex-row items-center justify-between bg-white px-5 py-24">
-        <div>
-          2024.
-          <br />
-          02.24
-          <br />
-          토요일
+      <Section>
+        <div className="flex flex-row items-center justify-between bg-white w-full px-5 py-24">
+          <div>
+            2024.
+            <br />
+            02.24
+            <br />
+            토요일
+          </div>
+          <div>-</div>
+          <div>
+            PM
+            <br />
+            14:00
+          </div>
         </div>
-        <div>-</div>
-        <div>
-          PM
-          <br />
-          14:00
-        </div>
-      </section>
+      </Section>
 
       {/* 장소 섹션 */}
-      <section className="flex flex-col justify-between bg-amber-50 px-5 py-24">
-        <h2>오시는 길</h2>
+      <Section title="오시는 길" bgColored={true}>
         <p>
           {/* 지도 구현 */}
         </p>
@@ -112,16 +111,15 @@ export default function Home() {
         <p>블라블라~</p>
         <h3>대중교통</h3>
         <p>블라블라~</p>
-      </section>
+      </Section>
 
       {/* 마음 전하실 곳 섹션 */}
-      <section className="flex flex-col items-center justify-between bg-white px-5 py-24">
-        <h2>마음 전하실 곳</h2>
+      <Section title="마음 전하실 곳">
         <h3>신랑 측 계좌번호</h3>
         <p>블라블라~</p>
         <h3>신부 측 계좌번호</h3>
         <p>블라블라~</p>
-      </section>
+      </Section>
 
       {/* 공유하기 섹션 */}
       <footer className="flex flex-col px-5 py-24 bg-amber-50 items-center">
@@ -129,6 +127,24 @@ export default function Home() {
         <p>청첩장 링크 복사하기</p>
       </footer>
     </article>
+  )
+}
+
+function Section({ bgColored, title, children }: { bgColored?: boolean | undefined, title?: string | undefined, children: React.ReactNode }) {
+  const bgColor = bgColored ? 'bg-amber-50' : 'bg-white'
+  return (
+    <section className={`flex flex-col items-center justify-between ${bgColor} px-5 py-24`}>
+      {title ? <SectionTitle title={title} /> : null}
+      {children}
+    </section>
+  )
+}
+
+function SectionTitle({ title }: { title: string }) {
+  return (
+    <h2 className="border-solid border-2 border-black rounded-full text-center font-bold inline-block py-1 px-3 mb-10">
+      {title}
+    </h2>
   )
 }
 
