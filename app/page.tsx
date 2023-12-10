@@ -13,7 +13,6 @@ export default function Home() {
           <Image
             src="/vercel.svg"
             alt="Title Wedding Image"
-            className="dark:invert"
             width={100}
             height={24}
             priority
