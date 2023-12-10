@@ -42,36 +42,30 @@ export default function Home() {
         {/* 전화번호 섹션 */}
         <section>
           <p>
-            <div>
-              이철수, 인순애의 차남 <span>이주찬</span>
-              <CallLink phoneNumber='010-4364-3208' />
-            </div>
-            <div>
-              이현일, 차미경의 장녀 <span>이수인</span>
-              <CallLink phoneNumber='010-4077-9142' />
-            </div>
+            이철수, 인순애의 차남 <span>이주찬</span>
+            <CallLink phoneNumber='010-4364-3208' />
+          </p>
+          <p>
+            이현일, 차미경의 장녀 <span>이수인</span>
+            <CallLink phoneNumber='010-4077-9142' />
           </p>
           <h3>신랑 측 혼주</h3>
           <p>
-            <div>
-              <span>부</span> 이철수
-              <CallLink phoneNumber='010-3182-2689' />
-            </div>
-            <div>
-              <span>모</span> 인순애
-              <CallLink phoneNumber='010-4155-3208' />
-            </div>
+            <span>부</span> 이철수
+            <CallLink phoneNumber='010-3182-2689' />
+          </p>
+          <p>
+            <span>모</span> 인순애
+            <CallLink phoneNumber='010-4155-3208' />
           </p>
           <h3>신부 측 혼주</h3>
           <p>
-            <div>
-              <span>부</span> 이현일
-              <CallLink phoneNumber='010-4596-0717' />
-            </div>
-            <div>
-              <span>모</span> 차미경
-              <CallLink phoneNumber='010-4596-3885' />
-            </div>
+            <span>부</span> 이현일
+            <CallLink phoneNumber='010-4596-0717' />
+          </p>
+          <p>
+            <span>모</span> 차미경
+            <CallLink phoneNumber='010-4596-3885' />
           </p>
         </section>
 
