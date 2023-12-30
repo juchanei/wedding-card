@@ -3,18 +3,19 @@ import Image from 'next/image'
 export default function Home() {
   return (
     <article className="flex min-h-screen flex-col justify-between max-w-md mx-auto">
-      <div className="py-24 px-5 bg-white">
+      <div className="pt-10 pb-24 px-5 bg-white">
         <h1 className="text-4xl text-left">
           24.02.24
           <br />
           SAT.PM 14:00
         </h1>
-        <p className="py-24 h-96">
+        <p className="my-8 h-[70vh] relative">
           <Image
-            src="/vercel.svg"
+            src="/main.jpg"
             alt="Title Wedding Image"
-            width={100}
-            height={24}
+            fill
+            objectFit="cover"
+            objectPosition='top'
             priority
           />
         </p>
