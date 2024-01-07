@@ -1,8 +1,8 @@
-import Section from '@/components/Section';
+import Section from '@/components/Section'
 
 export function LocationSection() {
   return (
-    <Section title="오시는 길" bgColored={true}>
+    <Section title='오시는 길' bgColored={true}>
       <p>
         {/* 지도 구현 */}
       </p>
@@ -31,5 +31,5 @@ export function LocationSection() {
         주차는 예식장 앞에서 먼저 안내받으시길 바랍니다.
       </p>
     </Section>
-  );
+  )
 }

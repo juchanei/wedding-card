@@ -12,7 +12,7 @@ export default function Section({ bgColored, title, children }: { bgColored?: bo
 
 function SectionTitle({ title }: { title: string }) {
   return (
-    <h2 className="border-solid border-2 border-black rounded-full text-center font-bold inline-block py-1 px-3 mb-10">
+    <h2 className='border-solid border-2 border-black rounded-full text-center font-bold inline-block py-1 px-3 mb-10'>
       {title}
     </h2>
   )

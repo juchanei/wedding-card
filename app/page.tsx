@@ -8,7 +8,7 @@ import { BankAccountSection } from '@/sections/BankAccountSection'
 
 export default function Home() {
   return (
-    <article className="flex min-h-screen flex-col justify-between max-w-md mx-auto">
+    <article className='flex min-h-screen flex-col justify-between max-w-md mx-auto'>
       <main>
         <MainSection />
         <InvitationMessageSection />
@@ -18,7 +18,7 @@ export default function Home() {
         <LocationSection />
         <BankAccountSection />
       </main>
-      <footer className="flex flex-col px-5 py-24 bg-amber-50 items-center">
+      <footer className='flex flex-col px-5 py-24 bg-amber-50 items-center'>
         <p>카카오 톡으로 공유하기</p>
         <p>청첩장 링크 복사하기</p>
       </footer>

@@ -45,7 +45,7 @@ export function ContactSection() {
         </p>
       ))}
     </Section>
-  );
+  )
 }
 
 function CallLink({ phoneNumber }: { phoneNumber: string }) {

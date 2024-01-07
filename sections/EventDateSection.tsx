@@ -1,9 +1,9 @@
-import Section from '@/components/Section';
+import Section from '@/components/Section'
 
 export function EventDateSection() {
   return (
     <Section>
-      <div className="flex flex-row items-center justify-center bg-white w-full px-5 py-24 font-blod text-3xl">
+      <div className='flex flex-row items-center justify-center bg-white w-full px-5 py-24 font-blod text-3xl'>
         <div className='text-center'>
           2024.
           <br />
@@ -19,5 +19,5 @@ export function EventDateSection() {
         </div>
       </div>
     </Section>
-  );
+  )
 }
