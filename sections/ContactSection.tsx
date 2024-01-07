@@ -1,55 +1,43 @@
 import Section from '@/components/Section'
 
-const couple = {
-  groom: {
-    role: '차남', name: '이주찬', phoneNumber: '010-4364-3208',
-    parents: [
-      { role: '부', name: '이철수', phoneNumber: '010-3182-2689' },
-      { role: '모', name: '인순애', phoneNumber: '010-4155-3208' },
-    ]
-  },
-  bride: {
-    role: '장녀', name: '이수인', phoneNumber: '010-4077-9142',
-    parents: [
-      { role: '부', name: '이현일', phoneNumber: '010-4596-0717' },
-      { role: '모', name: '차미경', phoneNumber: '010-4596-3885' },
-    ]
-  }
-}
+type Props = { groom: SpouseContact, bride: SpouseContact }
+type Contact = { role: FamilyRole, name: string, phoneNumber: string }
+type SpouseContact = Contact & { parents: Contact[] }
+type FamilyRole = '부' | '모' | '차남' | '장녀' // ...
 
-export function ContactSection() {
+export function ContactSection({ groom, bride }: Props) {
   return (
-    <Section>
-      {[couple.bride, couple.bride].map((spouse) => (
-        <p key={spouse.name}>
-          {spouse.parents.map(it => it.name).join(', ')}의 {spouse.role} {spouse.name}
-          <CallLink phoneNumber={spouse.phoneNumber} />
-        </p>
-      ))}
+    <Section title='연락처'>
+      <SpouseCantact spouse={groom} />
+      <SpouseCantact spouse={bride} />
 
-      <h3>신랑 측 혼주</h3>
-      {couple.groom.parents.map((parent) => (
-        <p key={parent.role}>
-          <span>{parent.name}</span>
-          {parent.role}
-          <CallLink phoneNumber={parent.phoneNumber} />
-        </p>
-      ))}
+      {groom.parents.length > 0 && <h3>신랑 측 혼주</h3>}
+      {groom.parents.map(parent => <ParentContact key={parent.role} parent={parent} />)}
 
-      <h3>신부 측 혼주</h3>
-      {couple.bride.parents.map((parent) => (
-        <p key={parent.role}>
-          <span>{parent.name}</span>
-          {parent.role}
-          <CallLink phoneNumber={parent.phoneNumber} />
-        </p>
-      ))}
+      {bride.parents.length > 0 && <h3>신부 측 혼주</h3>}
+      {bride.parents.map(parent => <ParentContact key={parent.role} parent={parent} />)}
+
     </Section>
   )
 }
 
-function CallLink({ phoneNumber }: { phoneNumber: string }) {
-  return <a href={`tel:${phoneNumber}`}><CallIcon /></a>
+function SpouseCantact({ spouse }: { spouse: SpouseContact }) {
+  return (
+    <p>
+      {spouse.parents.map(it => it.name).join(', ')}의 {spouse.role} {spouse.name}
+      <a href={`tel:${spouse.phoneNumber}`}><CallIcon /></a>
+    </p>
+  )
+}
+
+function ParentContact({ parent }: { parent: Contact }) {
+  return (
+    <p>
+      <span>{parent.role}</span>
+      {parent.name}
+      <a href={`tel:${parent.phoneNumber}`}><CallIcon /></a>
+    </p>
+  )
 }
 
 function CallIcon() {
