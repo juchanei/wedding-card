@@ -6,7 +6,7 @@ export function MainSection() {
       <h1 className='text-4xl text-left'>
         24.02.24
         <br />
-        SAT.PM 14:00
+        SAT. PM 14:00
       </h1>
       <p className='my-8 h-[70vh] relative'>
         <Image
@@ -17,10 +17,10 @@ export function MainSection() {
           objectPosition='top'
           priority />
       </p>
-      <h1 className='text-5xl text-right'>
-        <span>이수인</span>
-        {' - '}
+      <h1 className='text-4xl text-right'>
         <span>이주찬</span>
+        {' - '}
+        <span>이수인</span>
       </h1>
     </div>
   )
